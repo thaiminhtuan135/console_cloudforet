@@ -116,7 +116,8 @@ export default {
         const listApiQuery = new ApiQueryHelper();
 
         const getRepositoryID = async () => {
-            repositoryIdApiQuery.setFilters([{ k: 'repository_type', v: 'managed', o: '=' }]);
+            repositoryIdApiQuery.setFilters([{ k: 'repository_type', v: 'local', o: '=' }]);
+            // repositoryIdApiQuery.setFilters([{ k: 'repository_type', v: 'managed', o: '=' }]);
             console.log('repositoryIdApiQuery-data : ', repositoryIdApiQuery.data);
             const res = await SpaceConnector.client.repository.repository.list({
                 query: repositoryIdApiQuery.data,
