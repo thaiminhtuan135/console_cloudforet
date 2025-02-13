@@ -117,6 +117,7 @@ export default {
 
         const getRepositoryID = async () => {
             repositoryIdApiQuery.setFilters([{ k: 'repository_type', v: 'remote', o: '=' }]);
+            console.log('repositoryIdApiQuery-data : ', repositoryIdApiQuery.data);
             const res = await SpaceConnector.client.repository.repository.list({
                 query: repositoryIdApiQuery.data,
             });
