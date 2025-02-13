@@ -28,7 +28,7 @@ const getAuthOptions = (pluginInfo): any => {
 
 export const load = async ({ commit }, name: string): Promise<void|Error> => {
     const response = await SpaceConnector.client.identity.domain.list({ name });
-
+    console.log(response);
     if (response.total_count === 1) {
         const domainResponse = response.results[0];
         commit('setDomain', {
