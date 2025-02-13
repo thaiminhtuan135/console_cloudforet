@@ -120,6 +120,7 @@ export default {
             const res = await SpaceConnector.client.repository.repository.list({
                 query: repositoryIdApiQuery.data,
             });
+            console.log(res);
             const repositoryId = res.results[0].repository_id;
             return repositoryId;
         };
