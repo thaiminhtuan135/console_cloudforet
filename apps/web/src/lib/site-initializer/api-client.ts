@@ -36,8 +36,10 @@ const getSessionTimeoutCallback = (store) => () => {
     store.dispatch('error/showSessionExpiredError');
 };
 const getApiEndpoints = (config) => {
-    const ENDPOINT_V1 = config.get('CONSOLE_API.ENDPOINT');
-    const ENDPOINT_V2 = config.get('CONSOLE_API_V2.ENDPOINT');
+    // const ENDPOINT_V1 = config.get('CONSOLE_API.ENDPOINT');
+    // const ENDPOINT_V2 = config.get('CONSOLE_API_V2.ENDPOINT');
+    const ENDPOINT_V1 = 'http://10.1.43.229:30101';
+    const ENDPOINT_V2 = 'http://10.1.43.229:30102';
     if (ENDPOINT_V1 && ENDPOINT_V2) {
         return [ENDPOINT_V1, ENDPOINT_V2];
     }
