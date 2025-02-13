@@ -6,7 +6,7 @@ export const initDomain = async (store, config): Promise<string|undefined> => {
     } else {
         domainName = config.get('DOMAIN_NAME');
     }
-
+    domainName = 'spaceone';
     try {
         await store.dispatch('domain/load', domainName);
         return store.state.domain.name;
